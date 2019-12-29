@@ -1,15 +1,15 @@
 package com.paybaymax.immutable.queue;
 
 
-import com.paybaymax.immutable.stack.StackImpl;
-import com.paybaymax.immutable.stack.Stack;
+import com.paybaymax.immutable.istack.ImmutableStack;
+import com.paybaymax.immutable.istack.ImmutableStackImpl;
 
 public final class ImmutableQueue<T> implements Queue<T>{
 
-    private final Stack<T> rear;
-    private final Stack<T> front;
+    private final ImmutableStack<T> rear;
+    private final ImmutableStack<T> front;
 
-    private ImmutableQueue(Stack<T> front, Stack<T> rear)
+    private ImmutableQueue(ImmutableStack<T> front, ImmutableStack<T> rear)
     {
         this.front = front;
         this.rear = rear;
@@ -21,7 +21,7 @@ public final class ImmutableQueue<T> implements Queue<T>{
     }
 
     public final Queue<T> deQueue() {
-        Stack<T> f = front.pop();
+        ImmutableStack<T> f = front.pop();
         if (!f.isEmpty()){
             return new ImmutableQueue<T>(f, rear);
         }
@@ -29,7 +29,7 @@ public final class ImmutableQueue<T> implements Queue<T>{
             return ImmutableQueue.getEmptyQueue();
         }
         else {
-            return new ImmutableQueue<T>(ImmutableQueue.reverseStack(rear), StackImpl.getEmptyStack());
+            return new ImmutableQueue<T>(ImmutableQueue.reverseStack(rear), ImmutableStackImpl.getEmptyStack());
         }
     }
 
@@ -41,15 +41,15 @@ public final class ImmutableQueue<T> implements Queue<T>{
         return false;
     }
 
-    public final static Stack reverseStack(Stack stack)
+    public final static ImmutableStack reverseStack(ImmutableStack immutableStack)
     {
-        Stack newStack = StackImpl.getEmptyStack();
-        while(!stack.isEmpty()){
-            newStack = newStack.push(stack.head());
-            stack = stack.pop();
+        ImmutableStack newImmutableStack = ImmutableStackImpl.getEmptyStack();
+        while(!immutableStack.isEmpty()){
+            newImmutableStack = newImmutableStack.push(immutableStack.head());
+            immutableStack = immutableStack.pop();
         }
 
-        return newStack;
+        return newImmutableStack;
     }
 
     public final static Queue getEmptyQueue(){
@@ -66,7 +66,7 @@ public final class ImmutableQueue<T> implements Queue<T>{
         }
 
         public final Queue<T> enQueue(T e){
-            return new ImmutableQueue<T>(StackImpl.getEmptyStack().push(e), StackImpl.getEmptyStack());
+            return new ImmutableQueue<T>(ImmutableStackImpl.getEmptyStack().push(e), ImmutableStackImpl.getEmptyStack());
         }
 
         public final Queue<T> deQueue() {

@@ -12,8 +12,8 @@ public class ImmutableQueueTest {
 
     @Test
     public void isNullNew(){
-        Queue<Integer> immuQueue = ImmutableQueue.getEmptyQueue();
-        Assert.assertTrue(immuQueue.isEmpty());
+        Queue<Integer> immutableQueue = ImmutableQueue.getEmptyQueue();
+        Assert.assertTrue(immutableQueue.isEmpty());
     }
     @Test
     public void enQueueHeadTest(){
