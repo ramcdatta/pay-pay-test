@@ -1,8 +1,7 @@
 1. Coding task: 
 
-    please run **mvn test** to execute the unit test cases
-
-2. Design Question:
-
-    Please find the powerpoint slides for the architecture diagram
- 
+    a. ImmutableQueue is implemented by using immutable stack. 
+     
+    b. In pom.xml junit dependency is added. 
+    
+    b. please run **mvn test** project to execute the unit test cases.
