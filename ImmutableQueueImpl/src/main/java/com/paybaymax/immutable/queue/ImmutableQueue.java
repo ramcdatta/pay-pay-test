@@ -71,18 +71,18 @@ public final class ImmutableQueue<T> implements Queue<T>{
 
         public final Queue<T> deQueue() {
             try {
-                throw new Exception("dequeue() operation can not perform in empty Queue.");
+                throw new ImmutableQueueException("dequeue() operation can not perform in empty Queue.");
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             return null;
         }
 
         public final T head() {
             try {
-                throw new Exception("head is not there for empty Queue.");
+                throw new ImmutableQueueException("head is not there for empty Queue.");
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             return null;
         }

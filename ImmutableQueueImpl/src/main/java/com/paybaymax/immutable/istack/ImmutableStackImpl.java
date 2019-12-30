@@ -45,18 +45,18 @@ public final class ImmutableStackImpl<E> implements ImmutableStack<E> {
 
         public final ImmutableStack<E> pop() {
             try {
-                throw new Exception("Pop operation can not perform in empty ImmutableStack.");
+                throw new ImmutableStackException("Pop operation can not perform in empty ImmutableStack.");
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             return null;
         }
 
         public final E head() {
             try {
-                throw new Exception("head is not therefor empty ImmutableStack.");
+                throw new ImmutableStackException("head is not there for empty ImmutableStack.");
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             return null;
         }
