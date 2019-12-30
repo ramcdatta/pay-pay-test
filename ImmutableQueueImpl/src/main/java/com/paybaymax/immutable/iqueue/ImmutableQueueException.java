@@ -1,4 +1,4 @@
-package com.paybaymax.immutable.queue;
+package com.paybaymax.immutable.iqueue;
 
 /**
  * Created by Ram on 30-Dec-19.

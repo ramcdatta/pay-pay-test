@@ -1,4 +1,4 @@
-package com.paybaymax.immutable.queue;
+package com.paybaymax.immutable.iqueue;
 
 
 import com.paybaymax.immutable.istack.ImmutableStack;

@@ -1,5 +1,5 @@
-import com.paybaymax.immutable.queue.ImmutableQueue;
-import com.paybaymax.immutable.queue.Queue;
+import com.paybaymax.immutable.iqueue.ImmutableQueue;
+import com.paybaymax.immutable.iqueue.Queue;
 import org.junit.Assert;
 import org.junit.Test;
 
